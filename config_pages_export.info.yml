@@ -1,7 +1,7 @@
 name: Config Pages Export
 type: module
-description: 'Provides utility functionality for exporting and importing config_pages content between environments.'
-package: Custom
+description: 'Exports Config Pages entities as configuration, allowing them to be deployed between environments.'
 core_version_requirement: ^9 || ^10
+package: Configuration
 dependencies:
   - drupal:config_pages
