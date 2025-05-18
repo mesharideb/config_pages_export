@@ -1,0 +1,4 @@
+services:
+  config_pages_export.config_pages_handler:
+    class: Drupal\config_pages_export\Service\ConfigPagesHandler
+    arguments: ['@entity_type.manager', '@file_system', '@extension.list.module', '@string_translation']
