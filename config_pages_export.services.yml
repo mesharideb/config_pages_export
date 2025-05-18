@@ -1,4 +1,10 @@
 services:
-  config_pages_export.config_pages_handler:
-    class: Drupal\config_pages_export\Service\ConfigPagesHandler
-    arguments: ['@entity_type.manager', '@file_system', '@extension.list.module', '@string_translation']
+  config_pages_export.manager:
+    class: Drupal\config_pages_export\Service\ConfigPagesExportManager
+    arguments: ['@entity_type.manager', '@config.factory', '@config.storage', '@config.storage.snapshot']
+
+  config_pages_export.subscriber:
+    class: Drupal\config_pages_export\EventSubscriber\ConfigPagesExportSubscriber
+    arguments: ['@config_pages_export.manager', '@logger.factory', '@messenger']
+    tags:
+      - { name: event_subscriber }
