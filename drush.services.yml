@@ -1,0 +1,6 @@
+services:
+  config_pages_export.commands:
+    class: Drupal\config_pages_export\Commands\ConfigPagesExportCommands
+    arguments: ['@config_pages_export.config_pages_handler']
+    tags:
+      - { name: drush.command }
