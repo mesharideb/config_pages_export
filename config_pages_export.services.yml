@@ -1,7 +1,7 @@
 services:
   config_pages_export.manager:
     class: Drupal\config_pages_export\Service\ConfigPagesExportManager
-    arguments: ['@entity_type.manager', '@config.factory', '@config.storage', '@config.storage.snapshot']
+    arguments: ['@entity_type.manager', '@config.factory', '@config.storage', '@config.storage.snapshot', '@database', '@entity.repository', '@logger.factory']
 
   config_pages_export.subscriber:
     class: Drupal\config_pages_export\EventSubscriber\ConfigPagesExportSubscriber
